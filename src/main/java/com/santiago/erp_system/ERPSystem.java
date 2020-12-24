@@ -5,6 +5,8 @@
  */
 package com.santiago.erp_system;
 
+import java.util.List;
+
 /**
  *
  * @author Santiago
@@ -12,5 +14,13 @@ package com.santiago.erp_system;
 public class ERPSystem {
     public static void main(String[] args) {
         System.out.println("Bienvenido a ERP System");
+        ProductDao dao = new ProductDao();
+        for(List<String> record: dao.getRecords()) {
+//            for(String cell: record) {
+//                System.out.print(cell);
+//            }
+//            System.out.print("\n");
+            System.out.println(record.get(0));
+        }
     }
 }
